@@ -9,14 +9,54 @@
 <body>
     <div id="container">
         <div id="left">
-            <!-- hier komt de klok -->
+           <p id="clock">08:42</p>
         </div>
+
         <div id="middle">
-            <!-- Hier komt de reizigers info -->
-        </div>
-        <div id="right">
-            <!-- hier komt het spoor nummer -->
+            <div id="whiteblockmiddle">
+                <div id="trainboard">1 minuut_______________________________________InterCity
+                    Heerlen
+                    via 's-Hertogenbosch, Eindhoven,
+                    Weert, Roermond en sittard
+                    <div id="whiteblockmiddle2">Hierna/next: 8:56 IC Venlo
+                </div>
+            </div>
         </div>
     </div>
+
+    <div id="right">
+
+        <div id="whiteblockright">
+
+         <div id="blueblockright">
+
+            <div id="whiteblockright18">
+                18
+            <div id="whiteblockrightb">
+                b
+                <div id="whiteblockrightspoor">
+                    spoor
+
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <script>
+        function updateClock() {
+            const clockElement = document.getElementById('clock');
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+
+            clockElement.textContent = `${hours}:${minutes}:${seconds}`;
+        }
+        setInterval(updateClock, 1000);
+
+        updateClock();
+    </script>
 </body>
 </html>
